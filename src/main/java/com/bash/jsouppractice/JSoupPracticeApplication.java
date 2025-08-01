@@ -15,6 +15,7 @@ public class JSoupPracticeApplication {
         String url = "https://books.toscrape.com/";
         try{
             Document doc = Jsoup.connect(url).get();
+            books = doc.select("")
         } catch (IOException e) {
             e.printStackTrace();
         }
