@@ -18,7 +18,10 @@ public class WebScraper {
             for (Element book : books) {
                 String title = book.select("h3 > a").text();
                 String price = book.select(".price_color").text();
-                System.out.println(title + " - " + price);
+                String actual_price = price.substring(1);
+                if(Double.parseDouble(actual_price) <20.0){
+                    System.out.println(title + " - " + price);
+                }
             }
             System.out.println("---------------------------");
         } catch (IOException e) {
